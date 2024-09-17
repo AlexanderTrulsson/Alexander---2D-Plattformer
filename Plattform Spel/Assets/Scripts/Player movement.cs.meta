@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: ff756f6df65311f4899607687fc8d757
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - LeftFoot: {instanceID: 0}
+  - RightFoot: {instanceID: 0}
+  - spawnPosition: {instanceID: 0}
+  - healthSlider: {instanceID: 0}
+  - melonText: {instanceID: 0}
+  - jumpSound: {fileID: 8300000, guid: 1cfc1acb71c67b94e842f36919695482, type: 3}
+  - pickupSound: {fileID: 8300000, guid: 5e25dc80f91e913408287a2098ee526c, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
