@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Melon
   - Health
+  - Dissappear
   layers:
   - Default
   - TransparentFX

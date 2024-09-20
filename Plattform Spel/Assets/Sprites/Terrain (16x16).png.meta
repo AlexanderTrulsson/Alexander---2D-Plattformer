@@ -1000,15 +1000,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_43
+      name: Plattfor
       rect:
         serializedVersion: 2
         x: 272
         y: 128
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1021,15 +1021,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_44
+      name: Platttform
       rect:
         serializedVersion: 2
         x: 288
         y: 128
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1042,15 +1042,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_45
+      name: Plattform
       rect:
         serializedVersion: 2
         x: 304
         y: 128
         width: 16
         height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3141,6 +3141,9 @@ TextureImporter:
       Pink top left: -1200677912
       Pink top middle: -1319778285
       Pink top right: 869646352
+      Plattfor: 1269093883
+      Plattform: 1937627464
+      Platttform: -2017936579
       Terrain (16x16)_0: -1014394809
       Terrain (16x16)_1: 1323025051
       Terrain (16x16)_10: 1469832138
@@ -3214,9 +3217,6 @@ TextureImporter:
       Terrain (16x16)_40: 848788918
       Terrain (16x16)_41: -413073449
       Terrain (16x16)_42: -922260212
-      Terrain (16x16)_43: 1269093883
-      Terrain (16x16)_44: -2017936579
-      Terrain (16x16)_45: 1937627464
       Terrain (16x16)_46: 1427064738
       Terrain (16x16)_47: -704182328
       Terrain (16x16)_48: -1763948235
