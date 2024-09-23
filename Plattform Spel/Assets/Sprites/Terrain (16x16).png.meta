@@ -2512,7 +2512,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_115
+      name: Portal
       rect:
         serializedVersion: 2
         x: 16
@@ -3144,6 +3144,7 @@ TextureImporter:
       Plattfor: 1269093883
       Plattform: 1937627464
       Platttform: -2017936579
+      Portal: -1406242347
       Terrain (16x16)_0: -1014394809
       Terrain (16x16)_1: 1323025051
       Terrain (16x16)_10: 1469832138
@@ -3160,7 +3161,6 @@ TextureImporter:
       Terrain (16x16)_112: -1672032269
       Terrain (16x16)_113: -1480782105
       Terrain (16x16)_114: -89067043
-      Terrain (16x16)_115: -1406242347
       Terrain (16x16)_116: 774921265
       Terrain (16x16)_117: 1930499037
       Terrain (16x16)_118: 1693523035
