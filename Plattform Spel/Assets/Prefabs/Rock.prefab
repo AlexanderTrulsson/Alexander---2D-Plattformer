@@ -188,7 +188,7 @@ MonoBehaviour:
   Bounciness: 300
   knockbackForce: 400
   upwardForce: 200
-  damageGiven: 3
+  damageGiven: 5
 --- !u!61 &3856115352609248233
 BoxCollider2D:
   m_ObjectHideFlags: 0
