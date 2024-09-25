@@ -29,13 +29,13 @@ public class QuestChecker : MonoBehaviour
                 dialogBox.SetActive(true);
                 finishedText.SetActive(true);
                 anim.SetTrigger("Flag");
-                audioSource.PlayOneShot(levelWin, 0.4f);
+                audioSource.PlayOneShot(levelWin, 0.3f);
                 Invoke("LoadNextLevel", 4.5f);
             }
             else
             {
                 dialogBox.SetActive(true);
-                audioSource.PlayOneShot(levelFail, 0.4f);
+                audioSource.PlayOneShot(levelFail, 0.3f);
                 unfinishedText.SetActive(true);
             }
         }

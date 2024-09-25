@@ -127,7 +127,7 @@ public class Playermovement : MonoBehaviour
 
         if (other.CompareTag("Trophy"))
         {
-            audioSource.PlayOneShot(trophySound, 0.4f);
+            audioSource.PlayOneShot(trophySound, 0.26f);
         }
     }
 
