@@ -10,6 +10,10 @@ TagManager:
   - Melon
   - Health
   - Dissappear
+  - Strawberry
+  - Trampolin
+  - Frog
+  - Trophy
   layers:
   - Default
   - TransparentFX

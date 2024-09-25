@@ -15,8 +15,8 @@ public class Playermovement : MonoBehaviour
     [SerializeField] private LayerMask whatisGround;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private TMP_Text melonText;
-    [SerializeField] private AudioClip jumpSound, pickupSound;
-    [SerializeField] private GameObject melonParticles, rocketParticles;
+    [SerializeField] private AudioClip jumpSound, pickupSound, strawberrySound, plattformSound, trampolineSound, rockDeath, frogSound, trophySound;
+    [SerializeField] private GameObject melonParticles, rocketParticles, strawberryParticles;
 
     private float horizontalValue;
     private bool isGrounded;
@@ -85,6 +85,7 @@ public class Playermovement : MonoBehaviour
         rgdb.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rgdb.velocity.y);
     }
 
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Melon"))
@@ -101,6 +102,38 @@ public class Playermovement : MonoBehaviour
         {
             RestoreHealth(other.gameObject);
         }
+
+        if (other.CompareTag("Strawberry"))
+        {
+            audioSource.PlayOneShot(strawberrySound, 0.15f);
+            Instantiate(strawberryParticles, other.transform.position, Quaternion.identity);
+            Invoke("PlaySound", 0.5f);
+
+        }
+        if (other.CompareTag("Trampolin"))
+        {
+            audioSource.PlayOneShot(trampolineSound, 0.23f);
+        }
+
+        if (other.CompareTag("Enemy"))
+        {
+            audioSource.PlayOneShot(rockDeath, 0.16f);
+        }
+
+        if (other.CompareTag("Frog"))
+        {
+            audioSource.PlayOneShot(frogSound, 0.4f);
+        }
+
+        if (other.CompareTag("Trophy"))
+        {
+            audioSource.PlayOneShot(trophySound, 0.4f);
+        }
+    }
+
+    void PlaySound()
+    {
+        audioSource.PlayOneShot(plattformSound, 0.6f); // Play the assigned sound
     }
 
     private void UpdateMelonText()
