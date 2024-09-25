@@ -133,7 +133,7 @@ public class Playermovement : MonoBehaviour
 
     void PlaySound()
     {
-        audioSource.PlayOneShot(plattformSound, 0.6f); // Play the assigned sound
+        audioSource.PlayOneShot(plattformSound, 0.4f); // Play the assigned sound
     }
 
     private void UpdateMelonText()
