@@ -12,8 +12,9 @@ public class Destroyplattform : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            Destroy(platform); // Destroy the platform
             Destroy(gameObject); // Destroy the strawberry
+            Destroy(platform, 0.5f); // Destroy the platform
+           
         }
     }
 }
