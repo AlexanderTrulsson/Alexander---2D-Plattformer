@@ -52,7 +52,7 @@ public class EnemyMovement : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
-           other.gameObject.GetComponent<Playermovement>().TakeDamage(damageGiven);
+            other.gameObject.GetComponent<Playermovement>().TakeDamage(damageGiven);
 
             if (other.transform.position.x > transform.position.x)
             {

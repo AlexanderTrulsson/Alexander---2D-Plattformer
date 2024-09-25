@@ -158,7 +158,7 @@ public class Playermovement : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         currentHealth -= damageAmount;
-        healthSlider.value = currentHealth;
+        healthSlider.value = currentHealth; 
 
         if (currentHealth <= 0)
         {
