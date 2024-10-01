@@ -213,7 +213,7 @@ public class Playermovement : MonoBehaviour
         canMove = true;
     }
 
-    private void Respawn()
+    public void Respawn()
     {
         currentHealth = startingHealth;
         healthSlider.value = currentHealth;
