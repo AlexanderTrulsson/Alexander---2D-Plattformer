@@ -4089,7 +4089,7 @@ MonoBehaviour:
   finishedText: {fileID: 1730931552}
   unfinishedText: {fileID: 1276953107}
   questGoal: 20
-  leveltoLoad: 0
+  leveltoLoad: 2
   levelWin: {fileID: 8300000, guid: 5c2a406eb7d50c64eaeea186ed2b3676, type: 3}
   levelFail: {fileID: 8300000, guid: c1a54393727a4514bb8f2949974ee5c0, type: 3}
 --- !u!61 &419900658
