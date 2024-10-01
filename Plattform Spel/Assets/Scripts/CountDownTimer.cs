@@ -8,8 +8,8 @@ public class CountdownTimer : MonoBehaviour
 {
     public float timeRemaining = 10f;                // Total time for the countdown
     public bool timerIsRunning = false;              // Controls if the timer is active
-    public TextMeshProUGUI timerText;                // Reference to the TextMeshProUGUI component
-    public GameObject timerUI;                       // Reference to the UI element (to show/hide)
+    public TextMeshProUGUI timerText;                
+    public GameObject timerUI;                       
 
     private void Start()
     {
@@ -23,16 +23,16 @@ public class CountdownTimer : MonoBehaviour
         {
             if (timeRemaining > 0)
             {
-                timeRemaining -= Time.deltaTime;  // Reduce the time each frame
+                timeRemaining -= Time.deltaTime;  
                 UpdateTimerDisplay(timeRemaining);
             }
             else
             {
-                // Timer has reached zero
+                
                 timeRemaining = 0;
                 timerIsRunning = false;
                 UpdateTimerDisplay(timeRemaining);
-                timerUI.SetActive(false);  // Hide the timer UI
+                timerUI.SetActive(false);  
                 Debug.Log("Time has run out and timer is hidden!");
             }
         }
@@ -41,31 +41,31 @@ public class CountdownTimer : MonoBehaviour
     // Called when the player enters the trigger zone to start the timer
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !timerIsRunning)  // Check if the player enters the trigger
+        if (other.CompareTag("Player") && !timerIsRunning)  
         {
-            timerIsRunning = true;        // Start the timer
-            timeRemaining = timeRemaining;          // Reset the timer (if needed)
-            timerUI.SetActive(true);      // Show the timer UI
+            timerIsRunning = true;        
+            //timeRemaining = timeRemaining;          
+            timerUI.SetActive(true);      
             Debug.Log("Timer started!");
         }
     }
 
-    // Method to pause the timer when reaching the goal
+    
     public void PauseTimer()
     {
         timerIsRunning = false;  // Stop the timer
         Debug.Log("Timer paused!");
     }
 
-    // Method to update the UI text to show the remaining time in minutes and seconds
+    
     void UpdateTimerDisplay(float timeToDisplay)
     {
-        timeToDisplay += 1;  // Adjust to make the timer display more accurately
+        timeToDisplay += 1;  
 
         float minutes = Mathf.FloorToInt(timeToDisplay / 60);  // Get minutes
         float seconds = Mathf.FloorToInt(timeToDisplay % 60);  // Get seconds
 
-        // Update the TextMeshProUGUI text to display the time
+        
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }

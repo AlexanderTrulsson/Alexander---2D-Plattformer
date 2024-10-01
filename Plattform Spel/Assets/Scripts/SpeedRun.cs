@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class SpeedRun : MonoBehaviour
 {
-    [SerializeField] private float timeLimit = 10f;  // Time before destruction
-    //[SerializeField] private string nextSceneName;   // The name of the next scene to load
+    [SerializeField] private float timeLimit = 10f;  
+    //[SerializeField] private string nextSceneName;  // not used anymore
 
-    private Coroutine destroyCoroutine;             // Reference to the destruction coroutine
-    private bool isDestructionScheduled = false;    // Flag to track if destruction is scheduled
-    private bool destructionCancelled = false;      // Flag to confirm if the destruction was cancelled
+    private Coroutine destroyCoroutine;             
+    private bool isDestructionScheduled = false;    
+    private bool destructionCancelled = false;      
 
-    // Reference to the PlayerMovement script to call Respawn()
+    // Reference to the Playermovement script to call Respawn()
     private Playermovement playerMovement;
 
     private void Start()
@@ -34,33 +34,33 @@ public class SpeedRun : MonoBehaviour
         }
     }
 
-    // Called when the player enters another specific trigger to stop the destruction process
+  
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && isDestructionScheduled && !destructionCancelled)
         {
-            // Stop the destruction process if it's in progress
+            
             if (destroyCoroutine != null)
             {
                 StopCoroutine(destroyCoroutine);
                 isDestructionScheduled = false;
-                destructionCancelled = true;  // Mark the destruction as cancelled
+                destructionCancelled = true;  
                 Debug.Log("Destruction process stopped!");
             }
         }
     }
 
-    // Coroutine to call the Respawn() method after 'timeLimit' seconds
+    
     private IEnumerator DestroyAfterTime()
     {
-        yield return new WaitForSeconds(timeLimit);  // Wait for the specified time
+        yield return new WaitForSeconds(timeLimit);  
 
-        // Only call Respawn() if the destruction hasn't been cancelled
+        // Only call Respawn() if the destruction hasn't been canceled
         if (!destructionCancelled)
         {
             if (playerMovement != null)
             {
-                playerMovement.Respawn();  // Call the Respawn method from PlayerMovement script
+                playerMovement.Respawn();  // Call the Respawn method from Playermovement script
                 Debug.Log("Player respawned!");
             }
             else

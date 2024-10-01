@@ -2314,6 +2314,7 @@ GameObject:
   - component: {fileID: 338596117}
   - component: {fileID: 338596121}
   - component: {fileID: 338596120}
+  - component: {fileID: 338596122}
   m_Layer: 0
   m_Name: Quest giver
   m_TagString: Frog
@@ -2469,6 +2470,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1692533, y: 1.4333837}
   m_EdgeRadius: 0
+--- !u!114 &338596122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 338596116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617d68efff29940adda539950e903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 0}
 --- !u!1 &344731946
 GameObject:
   m_ObjectHideFlags: 0
@@ -3390,6 +3404,7 @@ GameObject:
   - component: {fileID: 419900656}
   - component: {fileID: 419900661}
   - component: {fileID: 419900662}
+  - component: {fileID: 419900663}
   m_Layer: 0
   m_Name: Quest checker
   m_TagString: Untagged
@@ -3660,6 +3675,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedRunScript: {fileID: 1029885108}
   nextSceneName: 
+--- !u!114 &419900663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419900655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617d68efff29940adda539950e903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 1029885111}
 --- !u!1 &440653424
 GameObject:
   m_ObjectHideFlags: 0
@@ -3792,7 +3820,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &451669043
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3800,7 +3828,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 451669042}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3809,7 +3837,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.000061035156, y: -0.000061035156}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &451669044
@@ -4358,6 +4386,7 @@ GameObject:
   - component: {fileID: 493161184}
   - component: {fileID: 493161186}
   - component: {fileID: 493161185}
+  - component: {fileID: 493161187}
   m_Layer: 0
   m_Name: Killzone (2)
   m_TagString: Untagged
@@ -4439,6 +4468,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1041911, y: 1.5243031}
   m_EdgeRadius: 0
+--- !u!114 &493161187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493161183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617d68efff29940adda539950e903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 1029885111}
 --- !u!1 &501615115
 GameObject:
   m_ObjectHideFlags: 0
@@ -7929,6 +7971,7 @@ GameObject:
   - component: {fileID: 937538784}
   - component: {fileID: 937538783}
   - component: {fileID: 937538782}
+  - component: {fileID: 937538785}
   m_Layer: 0
   m_Name: Killzone
   m_TagString: Untagged
@@ -8010,6 +8053,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1325543415}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937538785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937538781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617d68efff29940adda539950e903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 1029885111}
 --- !u!4 &971086619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4806928413060663129, guid: fe4e1b8163e2e0d46b20851804cb1b6a, type: 3}
@@ -8491,7 +8547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e6591e2f4d58747964f963da6e7acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 120
+  timeLimit: 90
 --- !u!61 &1029885109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8564,9 +8620,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7147d96d0e655498a47c9ab03fd908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 120
+  timeRemaining: 90
   timerIsRunning: 0
-  timerText: {fileID: 0}
+  timerText: {fileID: 451669044}
+  timerUI: {fileID: 451669042}
 --- !u!1 &1032386837
 GameObject:
   m_ObjectHideFlags: 0
@@ -56181,6 +56238,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1325543415}
+  - component: {fileID: 1325543417}
+  - component: {fileID: 1325543416}
   m_Layer: 0
   m_Name: Killzones
   m_TagString: Untagged
@@ -56206,6 +56265,33 @@ Transform:
   - {fileID: 493161184}
   m_Father: {fileID: 286554258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325543416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325543414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617d68efff29940adda539950e903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 1029885111}
+--- !u!114 &1325543417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325543414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f29699f44e68004ea478161cc0fbde3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedRunScript: {fileID: 1029885108}
+  nextSceneName: 
 --- !u!1 &1327023598
 GameObject:
   m_ObjectHideFlags: 0
@@ -59397,6 +59483,7 @@ GameObject:
   - component: {fileID: 1799992326}
   - component: {fileID: 1799992328}
   - component: {fileID: 1799992327}
+  - component: {fileID: 1799992329}
   m_Layer: 0
   m_Name: Killzone (1)
   m_TagString: Untagged
@@ -59478,6 +59565,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1799992329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799992325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43617d68efff29940adda539950e903f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdownTimer: {fileID: 1029885111}
 --- !u!1 &1803379458
 GameObject:
   m_ObjectHideFlags: 0
