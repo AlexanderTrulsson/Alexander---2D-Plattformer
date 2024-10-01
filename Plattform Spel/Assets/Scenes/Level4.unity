@@ -2830,7 +2830,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Now finish the level within 60 seconds. No watermelons needed!!
+  m_text: Now finish the level within 30 seconds. No watermelons needed!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 46325c6d7b0ced04da7215e4b4b9b846, type: 2}
   m_sharedMaterial: {fileID: 1631054250390838115, guid: 46325c6d7b0ced04da7215e4b4b9b846, type: 2}
@@ -3835,7 +3835,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 123.400024, y: -67.9}
+  m_AnchoredPosition: {x: 123.3999, y: -67.900024}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &451669044
@@ -8545,7 +8545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3e6591e2f4d58747964f963da6e7acf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 90
+  timeLimit: 30
 --- !u!61 &1029885109
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8618,7 +8618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a7147d96d0e655498a47c9ab03fd908, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 90
+  timeRemaining: 30
   timerIsRunning: 0
   timerText: {fileID: 451669044}
   timerUI: {fileID: 451669042}
