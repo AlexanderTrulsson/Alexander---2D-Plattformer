@@ -71,6 +71,7 @@ public class Playermovement : MonoBehaviour
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgdb.velocity.x));
         anim.SetFloat("VerticalSpeed", rgdb.velocity.y);
+        anim.SetBool("IsGrounded", CheckIfGrounded());
 
 
     }

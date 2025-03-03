@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4113076335382574970}
   - component: {fileID: 157397272095235759}
   m_Layer: 0
-  m_Name: Melon Particles
+  m_Name: Document Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1546,7 +1546,7 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 952040421, guid: 308a0717b852dc040a65498b373f6df7, type: 3}
+    - sprite: {fileID: 21300000, guid: 3773accddbb0e4d4a8bbfc389c1e1fbb, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
