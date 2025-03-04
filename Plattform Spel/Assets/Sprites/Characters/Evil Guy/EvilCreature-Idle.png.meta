@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5ae2f46b15b24ef4080302bd32449924
+guid: 984cb71eb75680c429d2853dd0d31cd9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,33 +97,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dead_0
+      name: EvilCreature-Idle_0
       rect:
         serializedVersion: 2
-        x: 25
-        y: 0
-        width: 43
-        height: 58
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d66e690050ffe924592887b7ad547816
-      internalID: -2090794961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dead_1
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 0
-        width: 47
+        x: 34
+        y: 5
+        width: 22
         height: 45
       alignment: 7
       pivot: {x: 0.5, y: 0}
@@ -132,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9e0e1450e73992d4fbd308c1d287b80e
-      internalID: -1728899587
+      spriteID: 5d9c524c4d5cccf4784a8f5b8fd6f093
+      internalID: -2099500298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_2
+      name: EvilCreature-Idle_1
       rect:
         serializedVersion: 2
-        x: 180
-        y: 0
-        width: 45
-        height: 34
+        x: 124
+        y: 5
+        width: 22
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,20 +132,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2526d33b75f5de748a56a231a7d01cfc
-      internalID: 174324807
+      spriteID: 1e4f4438aade9b54c8ea7e02c265f748
+      internalID: -1180010233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_3
+      name: EvilCreature-Idle_2
       rect:
         serializedVersion: 2
-        x: 259
-        y: 0
-        width: 50
-        height: 33
+        x: 214
+        y: 5
+        width: 22
+        height: 42
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aed0edf697c0eea4285eeadb6bfd2507
-      internalID: 1220500239
+      spriteID: ed7c5688ac0c1de4e9cac1a4dae18c4d
+      internalID: 1887791927
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_4
+      name: EvilCreature-Idle_3
       rect:
         serializedVersion: 2
-        x: 336
-        y: 0
-        width: 54
-        height: 33
+        x: 304
+        y: 5
+        width: 22
+        height: 43
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -195,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0024353f633b81b4388323e5a8efbe9c
-      internalID: -1510191085
+      spriteID: 6268e8a14a66b76409e39505bbf4e209
+      internalID: 1646490257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_5
+      name: EvilCreature-Idle_4
       rect:
         serializedVersion: 2
-        x: 412
-        y: 0
-        width: 54
-        height: 33
+        x: 394
+        y: 5
+        width: 22
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -216,8 +195,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e7111997e0ea5044e8564846efca84da
-      internalID: -1327853072
+      spriteID: 0ee2c48aaa164e34fbd6c7a3962dd363
+      internalID: 500108848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 5
+        width: 22
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb46ba636bc8dc4f99aa36a4745a56f
+      internalID: 662913013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 5
+        width: 22
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8b69b0798c5a8469a44a9da63e026a
+      internalID: 418472923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 5
+        width: 22
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233284a844d6a2342b5957208aab797f
+      internalID: 1232557660
       vertices: []
       indices: 
       edges: []
@@ -233,12 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dead_0: -2090794961
-      Dead_1: -1728899587
-      Dead_2: 174324807
-      Dead_3: 1220500239
-      Dead_4: -1510191085
-      Dead_5: -1327853072
+      EvilCreature-Idle_0: -2099500298
+      EvilCreature-Idle_1: -1180010233
+      EvilCreature-Idle_2: 1887791927
+      EvilCreature-Idle_3: 1646490257
+      EvilCreature-Idle_4: 500108848
+      EvilCreature-Idle_5: 662913013
+      EvilCreature-Idle_6: 418472923
+      EvilCreature-Idle_7: 1232557660
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

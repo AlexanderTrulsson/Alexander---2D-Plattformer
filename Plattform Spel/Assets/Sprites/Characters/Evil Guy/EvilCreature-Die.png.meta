@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 139f93a552f95414f87221fe4efa4cc5
+guid: b0c56f27202181348ab422068025c5e5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,139 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack 1_0
+      name: EvilCreature-Die_0
       rect:
         serializedVersion: 2
-        x: 26
-        y: 0
-        width: 43
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2d6e4f5091e5864eb1905114d97fb8f
-      internalID: -1126546396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_1
-      rect:
-        serializedVersion: 2
-        x: 92
-        y: 0
-        width: 59
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e338b74bcba2bb1478c300d38c0c8362
-      internalID: -1481944551
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_2
-      rect:
-        serializedVersion: 2
-        x: 174
-        y: 0
-        width: 64
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 755950a04ce5aa64cbb1b291fac1df1c
-      internalID: -1570087428
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_3
-      rect:
-        serializedVersion: 2
-        x: 273
-        y: 0
-        width: 33
-        height: 64
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fabc1f40e5bf05a4e9a07abdc7cdb29b
-      internalID: 1802332071
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_4
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 0
-        width: 45
-        height: 74
-      alignment: 9
-      pivot: {x: 0.37736952, y: -0.002513724}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82988fcf5af4c0c45b45f9f1642ef532
-      internalID: -1372766070
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_5
-      rect:
-        serializedVersion: 2
-        x: 400
-        y: 19
-        width: 12
-        height: 24
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a38d83ef1a1bef43b8f861b6e576a50
-      internalID: 411339614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Attack 1_6
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 20
+        x: 34
+        y: 5
         width: 22
-        height: 52
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -237,29 +111,260 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 939d71cd0c59d4f40bc6ba692d3effc0
-      internalID: 184790863
+      spriteID: 384972d25d1a53643a29cca77f10698f
+      internalID: 1526037922
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack 1_7
+      name: EvilCreature-Die_1
       rect:
         serializedVersion: 2
-        x: 341
-        y: 0
-        width: 85
-        height: 74
-      alignment: 9
-      pivot: {x: 0.205, y: 0}
+        x: 124
+        y: 5
+        width: 22
+        height: 46
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 291e4ceebd333ba4f96bff296218596d
-      internalID: -1088608420
+      spriteID: 0ef3636f13bfd9147986722bd4da58c1
+      internalID: 40497359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_2
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 5
+        width: 23
+        height: 45
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe5a1d79a43a6048956c35d4b63c982
+      internalID: 742890385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_3
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 5
+        width: 21
+        height: 47
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f06d0ada2cd7d441bed6e984549d312
+      internalID: 1190859691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_4
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 5
+        width: 21
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e63f5290ebe39f49a4c8ec1e8131714
+      internalID: 353134129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_5
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 5
+        width: 23
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2025cc7c5659b342b419ddaaa393ea6
+      internalID: -472282770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_6
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 5
+        width: 26
+        height: 48
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fed5dd45ca51854ea3cf456e594ed65
+      internalID: -1293303076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_7
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 5
+        width: 21
+        height: 33
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb314a2c5294d6c48ab6d885676b4088
+      internalID: 1196801864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_8
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 5
+        width: 21
+        height: 30
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f12ffeeaca6f1594e80283500fec3c6e
+      internalID: 960165865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_9
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 5
+        width: 26
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bffa42a77aef3e6419e7d69841f9ec28
+      internalID: 1700877697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_10
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 5
+        width: 31
+        height: 15
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e7657b482eae8544aa94d2a1efaafbb
+      internalID: -1884035971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_11
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 5
+        width: 33
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c9746e54814eb34f9e34a21ebe26024
+      internalID: -1590533882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Die_12
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 5
+        width: 33
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046f4feee9be421498d016a6c68f4a5a
+      internalID: 31085679
       vertices: []
       indices: 
       edges: []
@@ -275,14 +380,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Attack 1_0: -1126546396
-      Attack 1_1: -1481944551
-      Attack 1_2: -1570087428
-      Attack 1_3: 1802332071
-      Attack 1_4: -1372766070
-      Attack 1_5: 411339614
-      Attack 1_6: 184790863
-      Attack 1_7: -1088608420
+      EvilCreature-Die_0: 1526037922
+      EvilCreature-Die_1: 40497359
+      EvilCreature-Die_10: -1884035971
+      EvilCreature-Die_11: -1590533882
+      EvilCreature-Die_12: 31085679
+      EvilCreature-Die_2: 742890385
+      EvilCreature-Die_3: 1190859691
+      EvilCreature-Die_4: 353134129
+      EvilCreature-Die_5: -472282770
+      EvilCreature-Die_6: -1293303076
+      EvilCreature-Die_7: 1196801864
+      EvilCreature-Die_8: 960165865
+      EvilCreature-Die_9: 1700877697
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

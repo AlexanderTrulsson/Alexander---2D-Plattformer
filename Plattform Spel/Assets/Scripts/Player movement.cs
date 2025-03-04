@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement; // For scene reloading
 
 public class Playermovement : MonoBehaviour
 {
@@ -32,6 +33,9 @@ public class Playermovement : MonoBehaviour
 
     private RectTransform melonTextRectTransform;
 
+    // New variable to check if the player is dead
+    private bool isDead = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +44,6 @@ public class Playermovement : MonoBehaviour
         melonText.text = "" + melonsCollected;
 
         melonTextRectTransform = melonText.GetComponent<RectTransform>(); // Get RectTransform component
-
         UpdateMelonText();
 
         rgdb = GetComponent<Rigidbody2D>();
@@ -52,19 +55,22 @@ public class Playermovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the player is dead, don't allow any input.
+        if (isDead)
+            return;
+
         horizontalValue = Input.GetAxis("Horizontal");
 
         if (horizontalValue < 0)
         {
             FlipSprite(true);
         }
-
-        if (horizontalValue > 0)
+        else if (horizontalValue > 0)
         {
             FlipSprite(false);
         }
 
-        if (Input.GetButtonDown("Jump") && CheckIfGrounded() == true)
+        if (Input.GetButtonDown("Jump") && CheckIfGrounded())
         {
             Jump();
         }
@@ -72,20 +78,17 @@ public class Playermovement : MonoBehaviour
         anim.SetFloat("MoveSpeed", Mathf.Abs(rgdb.velocity.x));
         anim.SetFloat("VerticalSpeed", rgdb.velocity.y);
         anim.SetBool("IsGrounded", CheckIfGrounded());
-
-
     }
 
     private void FixedUpdate()
     {
-        if (!canMove)
+        if (!canMove || isDead)
         {
             return;
         }
 
         rgdb.velocity = new Vector2(horizontalValue * moveSpeed * Time.deltaTime, rgdb.velocity.y);
     }
-
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -109,7 +112,6 @@ public class Playermovement : MonoBehaviour
             audioSource.PlayOneShot(strawberrySound, 0.15f);
             Instantiate(strawberryParticles, other.transform.position, Quaternion.identity);
             Invoke("PlaySound", 0.5f);
-
         }
         if (other.CompareTag("Trampolin"))
         {
@@ -147,12 +149,12 @@ public class Playermovement : MonoBehaviour
         if (melonsCollected >= 10) // Adjust this threshold if needed
         {
             // Shift left for double-digit numbers
-            newPosition.x = - 98f; // Adjust this value as needed for your layout
+            newPosition.x = -98f; // Adjust this value as needed for your layout
         }
         else
         {
             // Reset position for single-digit numbers
-            newPosition.x = - 83f;
+            newPosition.x = -83f;
         }
 
         melonTextRectTransform.anchoredPosition = newPosition; // Apply new position
@@ -189,37 +191,66 @@ public class Playermovement : MonoBehaviour
         Instantiate(rocketParticles, transform.position, rocketParticles.transform.localRotation);
     }
 
+    // Modified TakeDamage to trigger a die animation and delay respawn for 1 second.
+    // It also immediately stops movement and cancels knockback sliding.
     public void TakeDamage(int damageAmount)
     {
+        if (isDead)
+            return;
+
         currentHealth -= damageAmount;
-        healthSlider.value = currentHealth; 
+        healthSlider.value = currentHealth;
 
         if (currentHealth <= 0)
         {
-            // Respawn
+            // Set dead state, disable movement, cancel current velocity,
+            // and disable physics simulation to stop any sliding.
+            isDead = true;
+            canMove = false;
+            rgdb.velocity = Vector2.zero;
+            rgdb.simulated = false;
 
-            Respawn();
+            // Trigger the death animation.
+            anim.SetTrigger("Die");
+
+            // Start a coroutine to delay respawn for 1 second.
+            StartCoroutine(DelayedRespawn());
+        }
+        else
+        {
+            // For non-lethal damage, trigger the hurt animation.
+            anim.SetTrigger("Hurt");
         }
     }
 
     public void TakeKnockBack(float knockbackForce, float upwards)
     {
+        if (isDead)
+            return;
+
         canMove = false;
-        rgdb.AddForce(new Vector2 (knockbackForce, upwards));
+        rgdb.AddForce(new Vector2(knockbackForce, upwards));
+        anim.SetTrigger("Hurt");
         Invoke("canmoveAgain", 0.25f);
     }
 
     private void canmoveAgain()
     {
-        canMove = true;
+        if (!isDead)
+            canMove = true;
     }
 
+    // Instead of just repositioning the player, we reload the entire scene upon respawn.
     public void Respawn()
     {
-        currentHealth = startingHealth;
-        healthSlider.value = currentHealth;
-        transform.position = spawnPosition.position;
-        rgdb. velocity = Vector2.zero;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // Coroutine to delay respawn for 1 second after the death animation.
+    private IEnumerator DelayedRespawn()
+    {
+        yield return new WaitForSeconds(1f);
+        Respawn();
     }
 
     private void updatehealthBar()
@@ -232,7 +263,8 @@ public class Playermovement : MonoBehaviour
         RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, whatisGround);
         RaycastHit2D rightHit = Physics2D.Raycast(RightFoot.position, Vector2.down, rayDistance, whatisGround);
 
-        if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || rightHit.collider != null && rightHit.collider.CompareTag("Ground"))
+        if ((leftHit.collider != null && leftHit.collider.CompareTag("Ground")) ||
+            (rightHit.collider != null && rightHit.collider.CompareTag("Ground")))
         {
             return true;
         }
@@ -241,5 +273,4 @@ public class Playermovement : MonoBehaviour
             return false;
         }
     }
-
 }

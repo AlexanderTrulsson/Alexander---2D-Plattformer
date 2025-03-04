@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8e37c9d8a1737f848b24e8fcd2629e40
+guid: bdc8e8c4ced8b724a859e2db51a0fd53
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Hurt_0
+      name: EvilCreature-Hurt_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 0
-        width: 46
-        height: 59
+        x: 34
+        y: 5
+        width: 22
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -111,20 +111,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7739339762b74f4abfb8f3a652a53d7
-      internalID: -1890092345
+      spriteID: 5464ed77fa76dc84cb584e4b818230f1
+      internalID: 1242655354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Hurt_1
+      name: EvilCreature-Hurt_1
       rect:
         serializedVersion: 2
-        x: 85
-        y: 0
-        width: 46
-        height: 60
+        x: 129
+        y: 5
+        width: 23
+        height: 44
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,8 +132,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5c555c991e33f8478ea80d8d2962755
-      internalID: 1773053075
+      spriteID: 459775162fd306648a74cbc882c49c72
+      internalID: -476914762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Hurt_2
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 5
+        width: 23
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b227f9ba15e2e384292480edf20473d6
+      internalID: 1356136651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Hurt_3
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 5
+        width: 21
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7da02a13beebb7543a1381129d633975
+      internalID: -613550434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EvilCreature-Hurt_4
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 5
+        width: 22
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95dd90a58e006e342bd4f3b81c735be6
+      internalID: 729484734
       vertices: []
       indices: 
       edges: []
@@ -149,8 +212,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Hurt_0: -1890092345
-      Hurt_1: 1773053075
+      EvilCreature-Hurt_0: 1242655354
+      EvilCreature-Hurt_1: -476914762
+      EvilCreature-Hurt_2: 1356136651
+      EvilCreature-Hurt_3: -613550434
+      EvilCreature-Hurt_4: 729484734
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
