@@ -91,8 +91,8 @@ public class EnemyMovement : MonoBehaviour
 
     private IEnumerator DelayedAttack()
     {
-        // Wait for 0.3 seconds before checking if the player is still within range
-        yield return new WaitForSeconds(0.5f);
+        // Wait for the delay before applying damage.
+        yield return new WaitForSeconds(0.6f);
 
         // If the player is still within the attack range, apply damage
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
@@ -100,7 +100,7 @@ public class EnemyMovement : MonoBehaviour
             Playermovement playerMovement = player.GetComponent<Playermovement>();
             if (playerMovement != null)
             {
-                // Apply knockback relative to positions for player's damage
+                // Apply knockback relative to positions
                 if (player.position.x > transform.position.x)
                     playerMovement.TakeKnockBack(knockbackForce, upwardForce);
                 else
@@ -115,6 +115,7 @@ public class EnemyMovement : MonoBehaviour
             Debug.Log("Player evaded the attack!");
         }
     }
+
 
     // This method is called by the player's attack script when you hit the enemy.
     // It now delays applying damage (and enemy knockback) by 0.3 seconds.

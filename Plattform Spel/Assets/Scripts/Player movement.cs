@@ -26,7 +26,7 @@ public class Playermovement : MonoBehaviour
     private SpriteRenderer rend;
     private Animator anim;
     private float rayDistance = 0.25f;
-    private int startingHealth = 5;
+    private int startingHealth = 2;
     private int currentHealth = 0;
     public int melonsCollected = 0;
     private AudioSource audioSource;
