@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.VisualScripting;
-using UnityEngine.SceneManagement; // For scene reloading
 
 public class Playermovement : MonoBehaviour
 {
@@ -240,11 +239,36 @@ public class Playermovement : MonoBehaviour
             canMove = true;
     }
 
+    public void UpdateSpawnPosition(Transform newSpawn)
+    {
+        spawnPosition = newSpawn;
+        Debug.Log("Checkpoint reached! New spawn position: " + spawnPosition.position);
+    }
+
+
     // Instead of just repositioning the player, we reload the entire scene upon respawn.
     public void Respawn()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        // Reset health and update UI.
+        currentHealth = startingHealth;
+        healthSlider.value = currentHealth;
+
+        // Clear any lingering velocity and re-enable physics simulation.
+        rgdb.velocity = Vector2.zero;
+        rgdb.simulated = true;  // <== Re-enable physics here
+
+        // Move the player to the designated spawn position.
+        transform.position = spawnPosition.position;
+
+        // Reset the player's animation state to idle.
+        anim.Play("KNIGHT_IDLE");
+
+        // Re-enable player controls and reset death state.
+        canMove = true;
+        isDead = false;
     }
+
+
 
     // Coroutine to delay respawn for 1 second after the death animation.
     private IEnumerator DelayedRespawn()

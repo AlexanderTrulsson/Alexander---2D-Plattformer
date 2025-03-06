@@ -7,9 +7,12 @@ public class PlayerToLight : MonoBehaviour
     public float flyingDuration = 2.5f; // Exact time you remain in light form
     public float moveSpeed = 5f;
 
-    private bool isTransformed = false;
+    public bool isTransformed = false;
     private Rigidbody2D rb;
     private float originalGravityScale;
+
+    public bool abortTransformation = false;
+
 
     // Reference to the reparented light object.
     public GameObject attachedLight;
@@ -56,14 +59,22 @@ public class PlayerToLight : MonoBehaviour
         isTransformed = true;
         animator.SetBool("isTransformed", true);
 
-        // Remain in flying (light) state for exactly flyingDuration seconds.
-        yield return new WaitForSeconds(flyingDuration);
+        // Wait until either flyingDuration is up or the abortTransformation flag is set.
+        float elapsed = 0f;
+        while (elapsed < flyingDuration && !abortTransformation)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Reset the abort flag (in case it was set).
+        abortTransformation = false;
 
         // Trigger the revert animation and swap colliders back immediately.
         isTransformed = false;
         animator.SetBool("isTransformed", false);
         animator.SetTrigger("Revert");
-       
+
         if (ballCollider != null) ballCollider.enabled = false;
         if (normalCollider != null) normalCollider.enabled = true;
 
@@ -93,13 +104,14 @@ public class PlayerToLight : MonoBehaviour
             rb.gravityScale = originalGravityScale;
         }
 
-        // Wait 2 seconds after reverting before spawning the new light prefab.
+        // Wait a short period before spawning the new light prefab.
         yield return new WaitForSeconds(0.8f);
         if (lightPrefab != null)
         {
             Instantiate(lightPrefab, originalLightPosition, Quaternion.identity);
         }
     }
+
 
     // Use FixedUpdate for physics-based movement so collisions are respected.
     private void FixedUpdate()

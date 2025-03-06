@@ -7,7 +7,18 @@ public class Killzone : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            var lightComponent = other.GetComponent<PlayerToLight>();
+            if (lightComponent != null && lightComponent.isTransformed)
+            {
+                // Set the flag to abort transformation early.
+                lightComponent.abortTransformation = true;
+            }
+            else
+            {
+                // For a non-transformed player, use your regular respawn logic.
+                other.GetComponent<Playermovement>().Respawn();
+            }
         }
     }
+
 }

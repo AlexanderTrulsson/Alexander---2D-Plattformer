@@ -22,6 +22,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float enemyKnockbackForce = 100f; // Knockback force applied when enemy is hit
     [SerializeField] private float enemyUpwardForce = 50f;     // Upward force for enemy knockback
 
+    [Header("Spawn Settings")]
+    [SerializeField] private float spawnAnimationDuration = 0.5f; // Duration of the spawn animation
+
     private int currentHealth;
     private float lastAttackTime;
     private Transform player;
@@ -29,10 +32,14 @@ public class EnemyMovement : MonoBehaviour
     private Animator animator;
     private Rigidbody2D rb;
 
+    // Spawn state variables: before spawning the enemy is inactive.
+    private bool isSpawned = false;
+    private bool isSpawning = false;
+
     private void Start()
     {
         currentHealth = maxHealth;
-        // Find the player in the scene by its tag ("Player")
+        // Find the player by tag ("Player")
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         if (playerObj != null)
             player = playerObj.transform;
@@ -40,6 +47,11 @@ public class EnemyMovement : MonoBehaviour
         rend = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        // Initially, hide the enemy and mark it as not spawned.
+        isSpawned = false;
+        isSpawning = false;
+        rend.enabled = false;
     }
 
     private void Update()
@@ -47,66 +59,83 @@ public class EnemyMovement : MonoBehaviour
         if (player == null)
             return;
 
-        // Determine distance from enemy to player
-        float distanceToPlayer = Vector2.Distance(transform.position, player.position);
-
-        // If player is within detection radius, begin behavior
-        if (distanceToPlayer <= detectionRadius)
+        // While the enemy hasn't spawned, check for the player's proximity and do nothing else.
+        if (!isSpawned)
         {
-            // If the player is within attack range, attack
-            if (distanceToPlayer <= attackRange)
+            float distanceToPlayer = Vector2.Distance(transform.position, player.position);
+            if (distanceToPlayer <= detectionRadius && !isSpawning)
+            {
+                StartCoroutine(SpawnEnemy());
+            }
+            return; // Exit Update: no movement, attack, or behavior until spawned.
+        }
+
+        // Normal enemy behavior after spawning:
+        float dist = Vector2.Distance(transform.position, player.position);
+        if (dist <= detectionRadius)
+        {
+            if (dist <= attackRange)
             {
                 Attack();
             }
             else
             {
-                // Otherwise, chase the player
+                // Chase the player.
                 Vector2 direction = (player.position - transform.position).normalized;
                 transform.Translate(direction * moveSpeed * Time.deltaTime);
 
-                // Flip the sprite based on movement direction
+                // Flip the sprite based on movement direction.
                 if (direction.x > 0)
                     rend.flipX = true;
                 else if (direction.x < 0)
                     rend.flipX = false;
             }
         }
-        // Optional: Add behavior for when the player is not in range (like patrolling)
+        // (Optional: Add patrolling/idle behavior if player is not within detection radius.)
+    }
+
+    private IEnumerator SpawnEnemy()
+    {
+        isSpawning = true;
+        // Enable the enemy’s sprite so it becomes visible.
+        rend.enabled = true;
+        // Trigger the spawn animation (make sure your Animator has a "Spawn" trigger).
+        animator.SetTrigger("Spawn");
+        // Wait for the spawn animation to complete.
+        yield return new WaitForSeconds(spawnAnimationDuration);
+        isSpawned = true;
+        isSpawning = false;
     }
 
     private void Attack()
     {
-        // Prevent attacking too often using a cooldown
+        // Ensure enemy only attacks after spawning.
+        if (!isSpawned)
+            return;
+
+        // Prevent attacking too often.
         if (Time.time - lastAttackTime < attackCooldown)
             return;
 
         lastAttackTime = Time.time;
-
-        // Trigger the enemy attack animation
         animator.SetTrigger("Attack");
-
-        // Start a coroutine that delays the damage by 0.3 seconds
         StartCoroutine(DelayedAttack());
     }
 
     private IEnumerator DelayedAttack()
     {
-        // Wait for the delay before applying damage.
         yield return new WaitForSeconds(0.6f);
-
-        // If the player is still within the attack range, apply damage
         if (Vector2.Distance(transform.position, player.position) <= attackRange)
         {
             Playermovement playerMovement = player.GetComponent<Playermovement>();
             if (playerMovement != null)
             {
-                // Apply knockback relative to positions
+                // Apply knockback to the player.
                 if (player.position.x > transform.position.x)
                     playerMovement.TakeKnockBack(knockbackForce, upwardForce);
                 else
                     playerMovement.TakeKnockBack(-knockbackForce, upwardForce);
-
-                // Apply damage to the player
+                // Apply damage to the player.
                 playerMovement.TakeDamage(damageGiven);
             }
         }
@@ -116,9 +145,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
-
-    // This method is called by the player's attack script when you hit the enemy.
-    // It now delays applying damage (and enemy knockback) by 0.3 seconds.
+    // Called when the enemy is hit by the player's attack.
     public void TakeDamage(int damage)
     {
         StartCoroutine(DelayedTakeDamage(damage));
@@ -126,37 +153,33 @@ public class EnemyMovement : MonoBehaviour
 
     private IEnumerator DelayedTakeDamage(int damage)
     {
-        // Wait for 0.3 seconds before applying damage and knockback to the enemy
         yield return new WaitForSeconds(0.3f);
-
         currentHealth -= damage;
 
-        // Apply knockback to the enemy when hit by the player
+        // Apply knockback to the enemy when hit.
         if (player != null && rb != null)
         {
-            // Calculate knockback direction (from the player to the enemy)
             Vector2 knockbackDirection = (transform.position - player.position).normalized;
-            // Combine horizontal and upward force
             Vector2 knockbackVector = knockbackDirection * enemyKnockbackForce + Vector2.up * enemyUpwardForce;
             rb.AddForce(knockbackVector, ForceMode2D.Impulse);
         }
-
-        // Optional: Trigger a hurt animation here
 
         if (currentHealth <= 0)
         {
             Die();
         }
+        else
+        {
+            animator.SetTrigger("Hurt");
+        }
     }
 
     private void Die()
     {
-        // Trigger death animation and then destroy the enemy object after a short delay
         animator.SetTrigger("Die");
         Destroy(gameObject, 1f);
     }
 
-    // Draw the attack range in the Scene view when the enemy is selected.
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
